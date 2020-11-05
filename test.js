@@ -1,19 +1,18 @@
-// Objects in javascript are a collection of key value pairs.
-// We will make a const variable, and set it to an object:
 
 const person = {
     name: 'Ammar',
-    //walk: function() {}, // old way
-    talk() { }, // new ES6 way
-    walk() { }    
+    walk() {
+        console.log(this);
+    }    
 };
-// Two ways to access these members:
-// dot "." method
-// bracket notation
-person.talk();
 
-// Bracket notation is used, when we don't know what property we want to
-// access. Imagine "targetMember" is an input field on a farm.
-// Depending on the user input, we access a different member:
-const targetMember = 'name';
-person['targetMember'] = 'John';
+// the value of this is determined by how a function is called, 
+// if we call a function as a method in an object,
+// "this" will always reutrn a reference to that object.
+
+// if we call a function as a standalone object, or outside an object "this" will
+// return the global object which is: the window object in browsers.
+person.walk();
+
+const walk = person.walk; //Just getting a reference to the walk() function. (NOT CALLING IT)
+walk();
