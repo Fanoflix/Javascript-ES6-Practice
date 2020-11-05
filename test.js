@@ -1,15 +1,19 @@
-// var keyword is scoped to the function (annoying)
-// let keyword is scoped to the block (ez)
-// const keyword is also scoped to the block
-// > const variables are constant, cannot be reassigned.
-function hey()
-{
-    for (let i = 0 ; i < 5 ; i++)
-    {
-        console.log(i);
-    }
-}
+// Objects in javascript are a collection of key value pairs.
+// We will make a const variable, and set it to an object:
 
+const person = {
+    name: 'Ammar',
+    //walk: function() {}, // old way
+    talk() { }, // new ES6 way
+    walk() { }    
+};
+// Two ways to access these members:
+// dot "." method
+// bracket notation
+person.talk();
 
-
-hey();
+// Bracket notation is used, when we don't know what property we want to
+// access. Imagine "targetMember" is an input field on a farm.
+// Depending on the user input, we access a different member:
+const targetMember = 'name';
+person['targetMember'] = 'John';
