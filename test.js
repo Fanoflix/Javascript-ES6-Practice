@@ -1,4 +1,9 @@
 // 1, 2 AND 3 ARE EXACTLY THE SAME!
+const jobs = [
+    {id: 1, isActive: true},
+    {id: 1, isActive: true},
+    {id: 1, isActive: false}
+];
 
 // -- 1 -- Old way
 const square = function(number) {
@@ -10,6 +15,8 @@ const square = function(number) {
 const square = (number) => {
     return number * number
 }
+// -- 1 --
+// const activeJobs = jobs.filter(function(job) { return job.isActive; });
 
 // -- 3 -- (new) Only 1 line in the function
 // - Even shorter
@@ -20,5 +27,12 @@ const square = number => number * number;
 // -- 4 -- (new) If we have 0 parameters
 const square = () => {
 }
+// -- 3 --
+// const activeJobs = jobs.filter(
+//     function(jobs) {
+//         return jobs.isActive;
+//     }
+// )
 
-// 1, 2 AND 3 ARE EXACTLY THE SAME!
+// 1, 2 AND 3 ARE EXACTLY THE SAME!// -- 2 --
+const activeJobs = jobs.filter(job =>  job.isActive );
