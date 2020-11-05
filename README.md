@@ -1,2 +1,2 @@
 # Javascript-ES6-Practice
- Javascript ES6 Notes
+    Includes short notes on major JS ES6 concepts.
