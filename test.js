@@ -1,13 +1,23 @@
-// --- Array map function ---
-const colors = ["red", "green", "blue"];
-const items = colors.map(color => `<li> ${color} </li>`);
-console.log(items);
+// ---- Object Destructuring ----
+const address = {
+    street: 'Tariq Road',
+    city: 'Karachi',
+    country: 'Pakistan'
+}
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log(numbers);
 
-const squares = numbers.map(number => number*number);
-console.log(squares);
+// const street = address.street;
+// const city = address.city;
+// const country = address.country;
 
-const twice = numbers.map(number => { return number*2})
-console.log(twice);
+// This single line is the same as lines 9, 10, and 11;
+const { street, city, country} = address; 
+
+// Same thing as above, but assigning aliases
+// address.street will be stored in st and so on.
+const { street: st, city: c, country: co} = address;
+
+console.log(`${street}, ${city}, ${country}`);
+console.log(`Same thing below: `);
+console.log(`${st}, ${c}, ${co}`);
+
