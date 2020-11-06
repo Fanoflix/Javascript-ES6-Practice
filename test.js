@@ -1,18 +1,20 @@
-
-const jobs = [
-    {id: 1, isActive: true},
-    {id: 1, isActive: true},
-    {id: 1, isActive: false}
-];
-
-// -- 1 --
-const activeJobs = jobs.filter(function(job) { return job.isActive; });
-// -- 2 -- 
-const activeJobs = jobs.filter(
-    function(job) {
-        return job.isActive;
+// Arrow functions don't rebind the this keyword.
+// ---- Returns the object related to the function (self) ----
+const person = {
+    talk() {
+        setTimeout(() => {
+        console.log ('this', this);
+        }, 1000);
     }
-)
+}
 
-// -- 3 --
-const activeJobs = jobs.filter(job =>  job.isActive );
+// ---- Returns the Window object (Rebinds "this") ----
+// const person = {
+//     talk() {
+//         setTimeout(function() {
+//         console.log ('this', this);
+//         }, 1000);
+//     }
+// }
+
+person.talk();
