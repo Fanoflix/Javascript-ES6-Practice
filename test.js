@@ -1,15 +1,33 @@
-// SPREAD OPERATOR ON OBJECTS
+// --- Classes ---
 
-const first = { name: 'Ammar'};
-const second = { job: 'Student'};
+class Person {
+    //constructor
+    constructor(name) {
+        this.name = name;
+    }
 
-const combined = {...first, ...second, location: 'Pakistan'};
-console.log(combined); // {name: "Ammar", job: "Student", location: "Pakistan"}
+    walk() {
+        console.log(`${this.name} walks!`);
+    }
+}
 
+// Use 'new' keyword to make an object of the class
+const person = new Person('Ammar');
+const person2 = new Person('Mussab');
+person.walk();
+person2.walk();
 
-// cloning objects
-// NOTE: We use [] for using spread operator with arrays.
-// NOTE: We use {} for using spread operator with objects.
+// Class Teacher is inheriting Person
+class Teacher extends Person {
+    constructor(name, course) {
+        super(name);
+        this.course = course;
+    }
 
-const newObj = {...first};
+    teach() {
+        console.log(`${this.name} teaches ${this.course}!`);
+    }
+}
 
+const teacher = new Teacher('Ammar', 'Maths');
+teacher.teach();
