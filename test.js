@@ -1,20 +1,13 @@
-// Arrow functions don't rebind the this keyword.
-// ---- Returns the object related to the function (self) ----
-const person = {
-    talk() {
-        setTimeout(() => {
-        console.log ('this', this);
-        }, 1000);
-    }
-}
+// --- Array map function ---
+const colors = ["red", "green", "blue"];
+const items = colors.map(color => `<li> ${color} </li>`);
+console.log(items);
 
-// ---- Returns the Window object (Rebinds "this") ----
-// const person = {
-//     talk() {
-//         setTimeout(function() {
-//         console.log ('this', this);
-//         }, 1000);
-//     }
-// }
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(numbers);
 
-person.talk();
+const squares = numbers.map(number => number*number);
+console.log(squares);
+
+const twice = numbers.map(number => { return number*2})
+console.log(twice);
