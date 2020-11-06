@@ -1,23 +1,27 @@
-// ---- Object Destructuring ----
-const address = {
-    street: 'Tariq Road',
-    city: 'Karachi',
-    country: 'Pakistan'
-}
+// --- SPREAD OPERATOR ---
+const first = [1,2,3];
+const second = [4,5,6];
 
+// spread operator --> ...;
+// the triple dots mean including all the content of the array
+// ...first means all the elements of the array 'first'
 
-// const street = address.street;
-// const city = address.city;
-// const country = address.country;
+// concatinating two arrays
+const combined = [...first, ...second];
+console.log(combined);
 
-// This single line is the same as lines 9, 10, and 11;
-const { street, city, country} = address; 
+// useful for adding values in the middle
+const combined2 = [...first, 'a', ...second]; 
+console.log(combined2); // [1, 2, 3, "a", 4, 5, 6]
 
-// Same thing as above, but assigning aliases
-// address.street will be stored in st and so on.
-const { street: st, city: c, country: co} = address;
+// some more examples:
+const combined3 = ['a', ...first, ...second]; 
+const combined4 = [...first, ...second, 'a'];
+console.log(combined3); // ["a", 1, 2, 3, 4, 5, 6]
+console.log(combined4); // [1, 2, 3, 4, 5, 6, "a"]
 
-console.log(`${street}, ${city}, ${country}`);
-console.log(`Same thing below: `);
-console.log(`${st}, ${c}, ${co}`);
+// cloning arrays
 
+const close = [...first];
+
+// spread operator on objects
